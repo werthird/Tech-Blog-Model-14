@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Bootstrap",
+    "post": "Bootstrap is Cool",
+    "user_id": "1"
+  },
+  {
+    "title": "Sequelize",
+    "post": "Sequelize is Cool",
+    "user_id": "2"
+  },
+  {
+    "title": "MySQL",
+    "post": "MySQL is Cool",
+    "user_id": "3"
+  }
+]

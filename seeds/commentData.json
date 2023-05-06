@@ -1,0 +1,17 @@
+[
+  {
+    "comment": "Nice Sequelize post",
+    "user_id": "1",
+    "post_id": "2"
+  },
+  {
+    "comment": "Nice MySQL post",
+    "user_id": "2",
+    "post_id": "3"
+  },
+  {
+    "comment": "Nice Bootstrap post",
+    "user_id": "3",
+    "post_id": "1"
+  }
+]
