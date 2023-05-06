@@ -1,0 +1,15 @@
+<div style="border: 2px solid red">
+  <div>
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/project/">{{post.title}}</a>
+    </h2>
+    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+  </div>
+  <div>
+    <p>
+      {{post.post}}
+    </p>
+  </div>
+</div>
