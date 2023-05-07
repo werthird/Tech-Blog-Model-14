@@ -1,13 +1,8 @@
-// const router = require('express').Router();
-// const postRoutes = require('./postRoutes');
-// const signIn = require('./signInRoute');
-// const signUp = require('./signUpRoute');
-// const dashboard = require('./dashboardRoute');
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const postRoutes = require('./postRoutes');
 
-// router.use('/post', postRoutes);
-// router.use('/sign-in', signIn);
-// router.use('/sign-up', signUp);
-// router.use('/dashboard', dashboard);
+router.use('/users', userRoutes);
+router.use('/post', postRoutes);
 
-
-// module.exports = router;
+module.exports = router;
