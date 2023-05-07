@@ -3,10 +3,19 @@ const { User } = require('../../models');
 
 
 //=============================================================
-// SIGNUP POST
+// CREATE NEW USER SIGNUP
 router.post('/', async (req, res) => {
+  console.log(req.body);
   try {
-    const userData = await User.create(req.body);
+    const { firstName, lastName, username, email, password } = req.body;
+
+    const userData = await User.create({
+      first_name: firstName,
+      last_name: lastName,
+      username: username,
+      email: email,
+      password: password,
+    });
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -21,7 +30,7 @@ router.post('/', async (req, res) => {
 
 
 //=============================================================
-// LOGIN POST
+// LOGIN
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -56,7 +65,7 @@ router.post('/login', async (req, res) => {
 
 
 //=============================================================
-// LOGOUT POST
+// LOGOUT
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

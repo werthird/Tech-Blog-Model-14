@@ -1,3 +1,6 @@
+//=============================================================
+// LOGOUT
+
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -11,4 +14,6 @@ const logout = async () => {
   }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+document
+  .querySelector('#logout')
+  .addEventListener('click', logout);

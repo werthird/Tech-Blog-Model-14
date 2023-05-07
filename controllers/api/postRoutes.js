@@ -8,6 +8,7 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
+    // req.body from dashboard.js
     const { title, content } = req.body;
 
     const newPost = await Post.create({
