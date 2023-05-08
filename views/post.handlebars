@@ -30,20 +30,26 @@
 
 {{!-- ====================================================================================== --}}
 {{!-- ADD COMMENT --}}
-<div class="col-md-6" style="border: 2px solid red">
-  <h3>Add a comment:</h3>
+{{#if logged_in}}
+  <div class="col-md-6" style="border: 2px solid red">
+    <h3>Add a comment:</h3>
 
-  <form class="form new-comment-form">
-    <div class="form-group">
-      <label for="comment-content">Comment</label>
-      <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
-    </div>
-    <input type="hidden" id="post-id" value="{{post.id}}">
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-  </form>
-</div>
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="comment-content">Comment</label>
+        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+      </div>
+      <input type="hidden" id="post-id" value="{{post.id}}">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+{{else}}
+  <p>Login in to add your own comments.</p>
+  <a href="/login">Login</a>
+  <a href="/signup">Signup</a>
+{{/if}}
 
 
 {{!-- ====================================================================================== --}}

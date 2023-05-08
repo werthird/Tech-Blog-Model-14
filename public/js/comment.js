@@ -18,7 +18,7 @@ const newCommentFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace(`/post/${postId}`);
     } else {
-      alert('Failed to create comment');
+      alert('Sorry, you will need to be logged in to comment.');
     }
   }
 };

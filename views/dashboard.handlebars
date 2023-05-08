@@ -7,16 +7,28 @@
   {{!-- DISPLAY USERS POSTS --}}
   <div>
     {{#each posts as |post| }}
-    <p>{{post.title}}</p>
-    <p>{{post.post}}</p>
-    <p>{{format_date post.date_created}}</p>
+      <div style="border: 2px solid red">
+        <div>
+          <h2>
+            {{{get_emoji}}}
+            <a href="/post/{{post.id}}">{{post.title}}</a>
+          </h2>
+          <p>Created on {{format_date post.date_created}}</p>
+        </div>
+        <div>
+          <p>
+            {{post.post}}
+          </p>
+        </div>
+      </div>
     {{/each}}
   </div>
 
+  <a href="./newpost">+ New Post</a>
 
   {{!-- CREATE A NEW POST --}}
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Post:</h3>
     <form class="form new-post-form">
       <div class="form-group">
         <label for="post-title">Post Title:</label>
