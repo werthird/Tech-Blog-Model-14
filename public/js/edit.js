@@ -28,21 +28,28 @@ const updateButtonHandler = async (event) => {
 //==========================================================================
 // DELETE POST
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  const postId = document.querySelector('#post-id').value;
 
-    const response = await fetch(`/api/post/delete/${id}`, {
+  if (postId) {
+    const response = await fetch(`/api/post/delete`, {
       method: 'DELETE',
+      body: JSON.stringify({ postId }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to delete project');
     }
   }
 };
 
+
+//==========================================================================
+// EVENT HANDLERS
 document
   .querySelector('.update-post-button')
   .addEventListener('click', updateButtonHandler);

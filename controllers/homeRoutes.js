@@ -141,7 +141,7 @@ router.get('/dashboard/update/:id', withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     // Render post view
-    res.render('updateDelete', {
+    res.render('editPost', {
       post,
       logged_in: req.session.logged_in
     });
