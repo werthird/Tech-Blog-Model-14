@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
 //==========================================================================
 // CREATE NEW POST
 
+// for route = api/post
 router.post('/', withAuth, async (req, res) => {
   try {
     // req.body from dashboard.js
@@ -20,6 +21,61 @@ router.post('/', withAuth, async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
+  }
+});
+
+
+//==========================================================================
+// UPDATE POST
+
+// for route = api/post
+router.put('/update', withAuth, async (req, res) => {
+  console.log('got to client side')
+  try {
+    const { title, content, postId } = req.body;
+
+    // Update the post in the database
+    const updatePost = await Post.update(
+      { title: title, 
+        post: content },
+      {
+        where: {
+          id: postId,
+        },
+        returning: true,
+      }
+    );
+
+    res.status(200).json(updatePost);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
+//==========================================================================
+// DELETE POST
+
+// for route = api/post
+router.delete('/delete/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!postData) {
+      res.status(404).json({ message: 'No post found with this id!' });
+      return;
+    }
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

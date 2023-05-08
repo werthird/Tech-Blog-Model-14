@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
       include: [{
         model: User,
         attributes: ['username'],
-      },],
+      }],
+      order: [['date_created', 'ASC']]
     });
     
     // Serialize data
@@ -98,19 +99,51 @@ router.get('/newpost', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ 
-        model: Post, 
-      }],
+      // attributes: { exclude: ['password'] },
+      // include: [{ 
+      //   model: Post, 
+      // }],
     });
 
     const user = userData.get({ plain: true });
     const posts = user.posts;
 
-    res.render('newpost', {
+    res.render('updateDelete', {
       user,
       posts,
       logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+//==========================================================================
+// EDIT POST PAGE
+router.get('/dashboard/update/:id', withAuth, async (req, res) => {
+  try {
+    // Grab post based on id
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          include: [User],
+        }
+      ],
+    });
+
+    // Serialize data
+    const post = postData.get({ plain: true });
+
+    // Render post view
+    res.render('updateDelete', {
+      post,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
