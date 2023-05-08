@@ -1,7 +1,7 @@
+{{!-- DISPLAY POST --}}
 <div style="border: 2px solid red">
   <div>
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{{get_emoji}}}
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
@@ -12,9 +12,47 @@
       {{post.post}}
     </p>
   </div>
-  <div>
-    <p>
-      <a href="../">HomePage</a>
-    </p>
-  </div>
 </div>
+
+
+{{!-- ====================================================================================== --}}
+{{!-- DISPLAY COMMENTS --}}
+<div style="border: 2px solid red">
+  <h2>Comments:</h2>
+  {{#each post.comments}}
+    <div>
+      <p>{{this.comment}}</p>
+      <p>-- {{this.user.username}}, {{format_date this.date_created}}</p>
+    </div>
+  {{/each}}
+</div>
+
+
+{{!-- ====================================================================================== --}}
+{{!-- ADD COMMENT --}}
+<div class="col-md-6" style="border: 2px solid red">
+  <h3>Add a comment:</h3>
+
+  <form class="form new-comment-form">
+    <div class="form-group">
+      <label for="comment-content">Comment</label>
+      <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+    </div>
+    <input type="hidden" id="post-id" value="{{post.id}}">
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+  </form>
+</div>
+
+
+{{!-- ====================================================================================== --}}
+{{!-- BACK TO HOME PAGE --}}
+<div style="border: 2px solid red">
+  <p>
+    <a href="../">HomePage</a>
+  </p>
+</div>
+
+
+<script src="../js/comment.js"></script>

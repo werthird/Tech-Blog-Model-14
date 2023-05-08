@@ -34,10 +34,16 @@ router.get('/post/:id', async (req, res) => {
   try {
     // Grab post based on id
     const postData = await Post.findByPk(req.params.id, {
-      include: [{
+      include: [
+        {
           model: User,
           attributes: ['username'],
-        }],
+        },
+        {
+          model: Comment,
+          include: [User],
+        }
+      ],
     });
 
     // Check if post exists

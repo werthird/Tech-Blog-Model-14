@@ -2,6 +2,9 @@
   <h1>Here is the dashboard page</h1>
   <h2>Welcome, {{user.first_name}} {{user.last_name}}!</h2>
   <h3>Your Posts:</h3>
+
+
+  {{!-- DISPLAY USERS POSTS --}}
   <div>
     {{#each posts as |post| }}
     <p>{{post.title}}</p>
@@ -10,9 +13,10 @@
     {{/each}}
   </div>
 
+
+  {{!-- CREATE A NEW POST --}}
   <div class="col-md-6">
     <h3>Create a New Project:</h3>
-
     <form class="form new-post-form">
       <div class="form-group">
         <label for="post-title">Post Title:</label>
@@ -29,4 +33,6 @@
   </div>
 </div>
 
+
+{{!-- LINK CLIENT SIDE JS FILE --}}
 <script src="./js/dashboard.js"></script>
