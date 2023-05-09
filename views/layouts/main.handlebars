@@ -5,36 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css"> --}}
+  <!-- FONT IMPORTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- STYLE SHEET IMPORTS -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/root_style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div>
-    <header>
-      <h1>
-        <a href="/">Tech Blog</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        <a href="/">Home</a> 
-        <a href="/dashboard">Dashboard</a> |
-        {{#if logged_in}}
-          <button id="logout">Logout</button>
-        {{else}}
-          <a href="/login">Login</a>
-          <a href="/signup">Signup</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  <header>
+    <h1>
+      <a href="/">The <span id="italic-span">Tech</span> Blog</a>
+    </h1>
+    <nav>
+      <!-- Conditionally render login or logout links -->
+      <a href="/">Home</a> 
+      <a href="/dashboard">Dashboard</a>
+      {{#if logged_in}}
+        <a href="/" id="logout">Logout</a>
+      {{else}}
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+      {{/if}}
+    </nav>
+  </header>
+  <main>
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
+    
+  </footer>
   <script src="/js/logout.js"></script>
 </body>
 
