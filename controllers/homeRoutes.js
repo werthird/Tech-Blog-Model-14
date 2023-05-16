@@ -108,7 +108,7 @@ router.get('/newpost', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
     const posts = user.posts;
 
-    res.render('updateDelete', {
+    res.render('newpost', {
       user,
       posts,
       logged_in: true
@@ -141,7 +141,7 @@ router.get('/dashboard/update/:id', withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     // Render post view
-    res.render('editPost', {
+    res.render('updatePost', {
       post,
       logged_in: req.session.logged_in
     });

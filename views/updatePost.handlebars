@@ -9,17 +9,17 @@
     </div>
     <div class="form-group">
       <label for="post-content">Post:</label>
-      <textarea class="edit-post" id="post-content" name="post-content">{{post.post}}</textarea>
+      <textarea class="edit-post" id="post-content" name="post-content">{{{restore_content post.post}}}</textarea>
     </div>
     <input type="hidden" id="post-id" value="{{post.id}}">
     <div class="update-post-button">
-      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="submit" class="update-post-button">Update</button>
     </div>
-    <div class="delete-post-button">
-      <button type="submit" class="btn btn-primary">Delete</button>
+    <div class="">
+      <button type="submit" class="delete-post-button">Delete</button>
     </div>
   </form>
 </div>
 
-{{!-- LINK CLIENT SIDE JS FILE --}}
-<script src="../../js/edit.js"></script>
+<script src="/js/updatePost.js"></script>
+<script src="/js/deletePost.js"></script>

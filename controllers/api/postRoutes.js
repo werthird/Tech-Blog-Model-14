@@ -10,11 +10,11 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     // req.body from dashboard.js
-    const { title, content } = req.body;
+    const { title, post } = req.body;
 
     const newPost = await Post.create({
       title: title,
-      post: content,
+      post: post,
       user_id: req.session.user_id,
     });
     res.status(200).json(newPost);
@@ -32,12 +32,12 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/update', withAuth, async (req, res) => {
   console.log('got to client side')
   try {
-    const { title, content, postId } = req.body;
+    const { title, post, postId } = req.body;
 
     // Update the post in the database
     const updatePost = await Post.update(
       { title: title, 
-        post: content },
+        post: post },
       {
         where: {
           id: postId,
