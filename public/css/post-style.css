@@ -99,5 +99,15 @@
     .new-comment-button {
       margin-top: 10px;
       width: 100px;
-
     }
+.comment-login {
+  padding: 10px;
+  font-weight: bolder;
+}
+  .comment-login div {
+    display: flex;
+    justify-content: center;
+  }
+  .comment-login div a {
+    margin: 10px;
+  }

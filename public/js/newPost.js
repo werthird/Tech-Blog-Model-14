@@ -45,5 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //==========================================================================
   // CLICK HANDLERS
-  document.querySelector('.new-post-form').onclick = newPostFormHandler;
+  document.querySelector('.new-post-button').onclick = newPostFormHandler;
 });

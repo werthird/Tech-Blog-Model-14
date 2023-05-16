@@ -1,7 +1,11 @@
-//=============================================================
-// LOGIN FORM
+//==========================================================================
+// DOCUMENT LOAD
+document.addEventListener('DOMContentLoaded', function() {
 
-const loginFormHandler = async (event) => {
+
+  //=============================================================
+  // LOGIN FORM
+  const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
@@ -23,9 +27,11 @@ const loginFormHandler = async (event) => {
       alert(response.statusText);
     }
   }
-};
+  };
 
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  //==========================================================================
+  // CLICK HANDLERS
+  document.querySelector('.login-form-button').onclick = loginFormHandler;
+
+});

@@ -1,0 +1,38 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+  .dashboard-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+    .dashboard-welcome h1 {
+      margin-top: 0;
+      font-size: 50px;
+    }
+    .dashboard-welcome h2 {
+      width: 50%;
+      padding: 0;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .dashboard-welcome div {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+      .new-post-button {
+        font-size: 20px;
+      }
+  .user-post-title {
+    margin: 30px 0;
+    font-size: 30px;
+  }
