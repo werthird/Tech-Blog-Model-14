@@ -10,6 +10,7 @@
 > # [Description](#description)
 A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
 
+<h2>Check out the deployed site: <a href="https://tech-blog-devin.herokuapp.com/">Tech Blog!</a></h2>
 <br />
 <br />
 
@@ -46,101 +47,29 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 
 <br />
 
-To get a look at the code used for this application, checkout our <a href="https://github.com/werthird/Tech-Blog-Model-14">GitHub Repo!</a> 
+This web application has a working and deployed site. Checkout our <a href="https://tech-blog-devin.herokuapp.com/">Tech Blog!</a>
+
+Or to get a better look at the code, please visit our GitHub repository: <a href="https://github.com/werthird/Tech-Blog-Model-14">Tech-Blog</a>
+
 
 <br />
 
 ## [Installation](#installation)
-No
+No installation required. 
+
+Checkout our website: <a href="https://tech-blog-devin.herokuapp.com/">Tech Blog</a>
 
 <br />
 
 ## [Useage](#useage)
-This is a command-line application that will take you through a series of prompts.
+After accessing the deployed site, there are a multitude of things you are able to do.
 
-1. After the module is installed on your local system, you are ready to use this app. To start the server, enter this into the terminal.
-	```
-	node server.js
-	```
-
-2. You are not able to interact with the interface. Follow the steps below:
-
-    I. **GET Route**
-    ```
-    There are six possible GET routes
-
-        1. /api/products - will return all the Products, plus their associated Categories and Tags.
-
-        2. /api/products/:id - :id is the Products id; will return a single product, plus associated Category and Tags.
-
-        3. /api/categories - will return all Categories and associated Products.
-
-        4. /api/categories/:id - :id is the Categories id; will return a single Category and associated Product
-
-        5. /api/tags - will return all the Tags, plus their accosiated Products.
-
-        6. /api/tags/:id - :id is Tag id; will return a single Tag and associate Product
-    ```
-
-    II. **POST Route**
-    ```
-    There are three possible POST routes:
-
-      1. /api/products - req.body syntax is:
-          {
-            "product_name": "STRING",
-            "price": DECIMAL,
-            "stock": INTEGER,
-            "category_id": INTEGER,
-            "tagIds": [INTEGER, ect.]
-          }
-
-      2. /api/categories - req.body syntax is:
-          {
-            "category_name": "STRING"
-          } 
-
-      3. /api/tags - req.body syntax is:
-          {
-            "tag_name": "STRING"
-          }
-    ```
-
-    III. **PUT Route**
-    ```
-    There are three possible PUT routes:
-
-        1. api/products/:id - :id is Product id; req.body syntax it:
-          {
-            "product_name": "STRING",
-            "price": DECIMAL,
-            "stock": INTEGER,
-            "category_id": INTEGER,
-            "tagIds": [INTEGER, ect.]
-          }
-        2. /api/categories/:id - :id is Categories id; req.body syntax it:
-          {
-            "category_name": "STRING"
-          } 
-
-      3. /api/tags/:id - :id is Tags id; req.body syntax it:
-          {
-            "tag_name": "STRING"
-          }
-    ```
-
-    IV. **DELETE Route**
-    ```
-    There are three possible DELETE routes:
-
-      1. api/products/:id - :id is Product id
-      
-      2. /api/categories/:id - :id is Categories id
-        
-      3. /api/tags/:id - :id is Tags id
-  
-    ```
-
+  1. The home page offers the ability to browse the current blog posts
+  2. When clicking on a blog post, the post is rendered on a full page with the ability to read the whole post, read the comments, and if logged in, add comments.
+  3. The user is offered the ability to login or signup.
+  4. When logged in, the user is able to view their dashboard, with a list or all blog post that they created.
+  5. From the dashboard, the user is able to edit their own blogpost, or create a new blog post. 
+  6. Finally, the user is able to logout of their current session, or the session will time out after a set amount of time.
 
 <br />
 
@@ -148,13 +77,24 @@ This is a command-line application that will take you through a series of prompt
 
 ## [Demonstration](#demonstration)
 
+<p>Homepage</p>
+<img style="text-align: center; border: solid 2px white; width:50%;height:50%" src="./assets/tech-blog-homepage.jpg" alt="Tech blog homepage showing a list of blog posts"/>
+
 <br />
-
-<u>*Click on this [**LINK**](https://drive.google.com/file/d/1mlKcP4N2z00hUJPYBmw8iTNiAbQJuZnH/view) to get a walk through video of how to use the application.*</u>
+<p>Post</p>
+<img style="text-align: center; border: solid 2px white; width:50%;height:50%" src="./assets/tech-blog-blogpost.jpg" alt="One of the tech blogs posts"/>
 
 <br />
+<p>Comment</p>
+<img style="text-align: center; border: solid 2px white; width:50%;height:50%" src="./assets/tech-blog-comments.jpg" alt="The comment section of a post"/>
 
-<img style="text-align: center; border: solid 2px white; width:100%;height:100%" src="./Assets/ecommerce-backend-insomnia-screenshot.jpg" alt="Insomnia demonstrating a GET route to tags database"/>
+<br />
+<p>Login</p>
+<img style="text-align: center; border: solid 2px white; width:50%;height:50%" src="./assets/tech-blog-login.jpg" alt="The login form for the Tech blog"/>
+
+<br />
+<p>Dashboard</p>
+<img style="text-align: center; border: solid 2px white; width:50%;height:50%" src="./assets/tech-blog-dashboard.jpg" alt="The dashboard for the Tech blog"/>
 
 <br />
 
@@ -182,14 +122,11 @@ Distributed under the MIT License. See LICENSE.txt for more information.
 
 ## [Contributors](#contributors)
 
-This is built as a UCF Coding bootcamp homework assignment. There was some pre-written code that had to be finished and formulated to meet the assignments requirements.
-
-Finished by Devin Reilly
+Designed and built by Devin Reilly
 
 <br />
 
 ## [Acknowledgements](#acknowledgements)
-- UCF GitLab starter code
 - [The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide) - README Template 
 - UCF Instructor **John Dinsmore**, and TA's, **Kristofer Marshall** and **Rider Cogswell**
 - Students of UCF Coding Boot Camp, in class, on Slack and on Discord
@@ -204,4 +141,4 @@ Finished by Devin Reilly
 
 Here is a link to our <a href="https://github.com/werthird">GitHub profile page!</a>
 
-Or send us an <a href="mailto: werthird@aol.com?subject=SVG Logo Maker Feedback">Email!</a>
+Or send us an <a href="mailto: werthird@aol.com?subject=Tech Blog Feedback">Email!</a>
